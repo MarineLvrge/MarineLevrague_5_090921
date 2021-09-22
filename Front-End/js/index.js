@@ -1,8 +1,9 @@
 // Récupération de l'URL
-const url = "http://localhost:3000/api/teddies"
+const urlApi = "http://localhost:3000/api/teddies"
 
 // Récupération des ours en peluche
-fetch(url)
+function getTeddies() { // Création d'une fonction qui récupère les données de l'API et les affiche
+fetch(urlApi)
     .then(data => data.json())
     .then(jsonListTeddies => {
         for(let jsonTeddies of jsonListTeddies) {
@@ -15,35 +16,23 @@ fetch(url)
                                                                         <div class="descriptionProducts">
                                                                             <h2 id="name">${products.name}</h2>
                                                                             <p id="description">${products.description}</p>
-                                                                            <p id="price">${products.price}</p>
+                                                                            <p id="price">${getFormatedPrice(products.price)}</p>
                                                                         </div>
                                                                     </a>
                                                                 </div>
                                                             </div>`
         }
-    });
-
-
-
-
-
-
-
-// Création de la fonction de récupération des ours
-/* async function getTeddies(){
-    fetch(url, {method : 'GET'})
-        .then((res) => {
-            return res.json();
-        }).then((json) => {
-            createCard(json);
-    });
+    })
+    .catch(function(e) {
+        alert("La page semble rencontrer une erreur, contactez-nous si le problème persiste.")
+    })
 }
 
-function createCard(teddies){
-    teddies.forEach(createCard => {
-        console.log(teddies);
-    });
-}
+// Fonction qui formate le prix
+function getFormatedPrice(price) {
+    let newPrice = price / 100;
+    return Intl.NumberFormat("fr-FR", {style: "currency", currency: "EUR"}).format(newPrice)
+};
 
-getTeddies(); */
-
+// Appel de la fonction de récupération
+getTeddies();
