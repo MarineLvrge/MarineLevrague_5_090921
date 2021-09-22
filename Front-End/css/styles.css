@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:visited, a:active {
+    color: inherit;
+}
+
+body {
+    width: 100%;
+    font-family: "Hind Siliguri", sans-serif;
+}
+
+/* Header */
+
+.container {
+    width: 100%;
+}
+
+.container_nav {
+    width: 100%;
+    height: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 2rem;
+    background-color: rosybrown;
+}
+
+.logo {
+    width: 20rem;
+    margin-left: 2rem;
+}
+
+span {
+    font-size: 1.3rem;
+    color: black;
+    margin-left: .5rem;
+    margin-right: 2rem;
+    font-family: "Hind Siliguri", sans-serif;
+}
+
+/* Nos produits */
+
+h1 {
+    text-align: center;
+    color: black;
+    padding: 1rem;
+}
+
+.listProducts {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.cardProducts {
+    width: 30%;
+    height: 100%;
+    border: solid #E99962 .3rem;
+    border-radius: 1rem;
+    margin: 1rem;
+}
+
+#imgUrl {
+    width: 100%;
+    height: 22rem;
+    object-fit: cover;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+}
+
+.descriptionProducts {
+    text-align: center;
+}
+
+/* Footer */
+
+.footer {
+    background-color: rosybrown;
+    width: 100%;
+    height: 10rem;
+    padding: 1rem;
+}
+
+.footerList {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    font-size: 1.3rem;
+    color: black;
+}
+
+h2 {
+    text-align: center;
+    padding: 1rem;
+}
+
+.footerSocial {
+    text-align: center;
+    font-size: 2.5rem;
+    justify-content: space-around;
+    display: flex;
+}
