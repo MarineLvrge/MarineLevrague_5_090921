@@ -23,8 +23,64 @@
         </div>
     </header>
 
+    <!-- Récapitulatif panier + formulaire d'envoi -->
     <main>
+        <section class="cartContainer">
 
+            <h1 class="title">Mon panier</h1>
+            <div class="cartResume">
+                <table>
+                    <thead class="cartBoard">
+                        <tr>
+                            <th>Produit</th>
+                            <th>Référence</th>
+                            <th>Prix</th>
+                        </tr>
+                    </thead> 
+                </table>
+            </div>
+
+            <div class="cartForm">
+                <h2 class="title">Informations de livraison</h2>
+                    <form method="POST" action="confirmation.html">
+
+                        <div class="formElt">
+                            <label for="firstName" class="formLabel">Prénom</label>
+                            <input type="text" class="formInput" id="firstName" placeholder="Saisir votre prénom" required>
+                        </div>
+
+                        <div class="formElt">
+                            <label for="lastName" class="formLabel">Nom</label>
+                            <input type="text" class="formInput" id="lastName" placeholder="Saisir votre nom" required>
+                        </div>
+
+                        <div class="formElt">
+                            <label for="email" class="formLabel">Adresse électronique</label>
+                            <input type="text" class="formInput" id="email" placeholder="Saisir votre adresse email" required>
+                        </div>
+
+                        <div class="formElt">
+                            <label for="address" class="formLabel">Adresse postale</label>
+                            <input type="text" class="formInput" id="address" placeholder="Saisir votre adresse postale" required>
+                        </div>
+
+                        <div class="formElt">
+                            <label for="city" class="formLabel">Ville</label>
+                            <input type="text" class="formInput" id="city" placeholder="Saisir votre ville" required>
+                        </div>
+
+                        <div class="formElt">
+                            <label for="zip" class="formLabel">Code postal</label>
+                            <input type="text" class="formInput" id="zip" placeholder="Saisir votre code postal" required>
+                        </div>
+
+                        <div class="button">
+                            <button type="submit" class="btn">Valider ma commande</button>
+                        </div>
+                    </form>
+            </div>
+
+        </section>
         
     </main>
 
