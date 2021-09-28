@@ -29,9 +29,9 @@ fetch(urlApi)
                                                             </div>`
         }
     })
-    .catch(function(e) {
+    /*.catch(function(e) {
         alert("La page semble rencontrer une erreur, contactez-nous si le problème persiste.")
-    })
+    })*/
 }
 
 // Fonction qui formate le prix

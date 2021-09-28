@@ -6,7 +6,7 @@ console.log(queryStringUrlId);
 const urlSearchParams = new URLSearchParams(queryStringUrlId);
 console.log(urlSearchParams);
 
-const Id = urlSearchParams.get("id");
+const Id = urlSearchParams.get("_id");
 console.log(Id);
 
 // Affichage du produit sélectionné
@@ -32,4 +32,4 @@ fetch(`http://localhost:3000/api/teddies/${Id}`)
                                                                     <p id="price">${getFormatedPrice(products.price)}</p>
                                                                     <button type="submit" id="btn">Ajouter au Panier</button>
                                                             </div>`
-});
+})
