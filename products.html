@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/9c3c1d2eee.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="./Front-End/css/styles.css">
     <title>Orinounours - Nos produits</title>
 </head>
 
@@ -14,15 +14,35 @@
     <header>
         <div class="container">
             <div class="container_nav">
-                <a href="index.html"><img class="logo" src="./images/logo_orinounours.png" alt="Logo Orinoco"></a>
+                <a href="index.html"><img class="logo" src="./Front-End/images/logo_orinounours.png" alt="Logo Orinoco"></a>
                 <a href="cart.html" class="cart"><i class="fas fa-shopping-cart"><span>Panier</span></i></a>
             </div>
         </div>
     </header>
 
     <main>
+        <h1 class="title">L'ourson choisi</h1>
         <section class="productElt">
 
+            <!-- JS 
+            <div class="cardProducts">
+
+                <div class="imgProducts">
+                    <img id="imgUrl" src="${products.imageUrl}">
+                </div>
+
+                <div id="name">${products.name}</div>
+                <p id="description">${products.description}</div>
+                    <form class="productOpt">
+                        <label for="colors" class="colors">Choix de la couleur</label>
+                        <select name="colors" id="colors">
+                            <option selected>Choix de la couleur</option>${products.colors.map(color => `<option>${color}</option>)}
+                        </select>
+                    </form>
+                    <p id="price">${getFormatedPrice(products.price)}</p>
+                    <button type="submit" id="btn" data-id="${products._id}">Ajouter au Panier</button>
+            </div>
+        -->
         </section>
         
     </main>
@@ -45,6 +65,6 @@
             </div>
         </section>
     </footer>
-    <script src="js/products.js"></script>
+    <script src="./Front-End/js/products.js"></script>
 </body>
 </html>

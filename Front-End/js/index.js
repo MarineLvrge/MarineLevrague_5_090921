@@ -1,3 +1,9 @@
+class Product {
+    constructor(jsonTeddies) {
+        jsonTeddies && Object.assign(this, jsonTeddies);
+    }
+}
+
 // Récupération de l'URL
 const urlApi = "http://localhost:3000/api/teddies"
 
@@ -9,7 +15,7 @@ fetch(urlApi)
         for(let jsonTeddies of jsonListTeddies) {
             let products = new Product (jsonTeddies);
             document.querySelector(".listProducts").innerHTML += `<div class="cardProducts">
-                                                                    <a href="products.html">
+                                                                    <a href="products.html?_id=${products._id}">
                                                                         <div class="imgProducts">
                                                                             <img id="imgUrl" src="${products.imageUrl}">
                                                                         </div>
