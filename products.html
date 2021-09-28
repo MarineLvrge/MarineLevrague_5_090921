@@ -31,16 +31,17 @@
                     <img id="imgUrl" src="${products.imageUrl}">
                 </div>
 
-                <div id="name">${products.name}</div>
+                <h2 id="name">${products.name}</h2>
                 <p id="description">${products.description}</div>
+
                     <form class="productOpt">
-                        <label for="colors" class="colors">Choix de la couleur</label>
+                        <label for="colors">Choix de la couleur</label>
                         <select name="colors" id="colors">
-                            <option selected>Choix de la couleur</option>${products.colors.map(color => `<option>${color}</option>)}
                         </select>
                     </form>
+
                     <p id="price">${getFormatedPrice(products.price)}</p>
-                    <button type="submit" id="btn" data-id="${products._id}">Ajouter au Panier</button>
+                    <button type="submit" id="btn">Ajouter au Panier</button>
             </div>
         -->
         </section>
