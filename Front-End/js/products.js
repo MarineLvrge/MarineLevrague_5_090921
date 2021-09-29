@@ -32,4 +32,13 @@ fetch(`http://localhost:3000/api/teddies/${Id}`)
                                                                     <p id="price">${getFormatedPrice(products.price)}</p>
                                                                     <button type="submit" id="btn">Ajouter au Panier</button>
                                                             </div>`
-})
+}).catch(function(e) {
+    console.log(e);
+    window.alert("some bugs here...")
+});
+
+// Fonction qui formate le prix
+function getFormatedPrice(price) {
+    let newPrice = price / 100;
+    return Intl.NumberFormat("fr-FR", {style: "currency", currency: "EUR"}).format(newPrice)
+};

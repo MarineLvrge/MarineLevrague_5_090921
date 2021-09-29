@@ -1,9 +1,3 @@
-class Product {
-    constructor(jsonTeddies) {
-        jsonTeddies && Object.assign(this, jsonTeddies);
-    }
-}
-
 // Récupération de l'URL
 const urlApi = "http://localhost:3000/api/teddies"
 
@@ -28,10 +22,10 @@ fetch(urlApi)
                                                                 </div>
                                                             </div>`
         }
-    })
-    /*.catch(function(e) {
+    }).catch(function(e) {
+        console.log(e);
         alert("La page semble rencontrer une erreur, contactez-nous si le problème persiste.")
-    })*/
+    })
 }
 
 // Fonction qui formate le prix
