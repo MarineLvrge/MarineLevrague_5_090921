@@ -14,27 +14,41 @@ fetch(`http://localhost:3000/api/teddies/${Id}`)
     .then(response => response.json())
     .then(dataProduct => {
         let products = new Product(dataProduct);
-        document.querySelector(".productElt").innerHTML += `<div class="cardProducts">
+        document.querySelector(".productElt").innerHTML += `<div class="cardProduct">
 
-                                                                <div class="imgProducts">
-                                                                    <img id="imgUrl" src="${products.imageUrl}">
+                                                                <div class="imgProduct">
+                                                                    <img id="imgUrlProduct" src="${products.imageUrl}">
                                                                 </div>
 
-                                                                <h2 id="name">${products.name}</h2>
-                                                                <p id="description">${products.description}</p>
+                                                                <div class="descriptionProducts">
+                                                                    <h2 id="name">${products.name}</h2>
+                                                                    <p id="description">${products.description}</p>
 
                                                                         <form class="productOpt">
                                                                             <label for="colors">Choix de la couleur</label>
-                                                                            <select name="colors" id="colors">
+                                                                            <select name="colors" id="colors" required>
+                                                                            <option value="1">Choisissez votre couleur</option>
+                                                                            ${products.colors.map(color => `<option>${color}</option>`)}
                                                                             </select>
                                                                         </form>
 
                                                                     <p id="price">${getFormatedPrice(products.price)}</p>
-                                                                    <button type="submit" id="btn">Ajouter au Panier</button>
+                                                                    <button type="submit" id="btnCart">Ajouter au Panier</button>
+                                                                </div>
                                                             </div>`
-}).catch(function(e) {
+
+                                                            
+const btnCart = document.querySelector("#btnCart");
+btnCart.addEventListener("click", (event) => {
+event.preventDefault();
+console.log(btnCart);
+});
+
+
+})
+.catch(function(e) {
     console.log(e);
-    window.alert("some bugs here...")
+    window.alert("La page semble rencontrer une erreur, contactez-nous si le problème persiste.")
 });
 
 // Fonction qui formate le prix

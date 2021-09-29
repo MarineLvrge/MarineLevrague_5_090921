@@ -5,6 +5,7 @@
 
 html {
     box-sizing: border-box;
+    width: 100%;
 }
 
 a {
@@ -51,7 +52,7 @@ span {
     font-family: "Hind Siliguri", sans-serif;
 }
 
-/* Nos produits */
+/* Page d'accueil - Nos produits */
 
 h1 {
     text-align: center;
@@ -92,7 +93,6 @@ h1 {
     background-color: rosybrown;
     width: 100%;
     height: 10rem;
-    padding: 1rem;
 }
 
 .footerList {
@@ -110,7 +110,7 @@ h2 {
 
 .footerSocial {
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 1.8rem;
     justify-content: space-around;
     display: flex;
 }
@@ -157,4 +157,35 @@ button {
 .btn {
     font-size: 1rem;
     color: black;
+}
+
+/* Page produit */
+
+.productElt {
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.cardProduct {
+    width: 50%;
+    height: 100%;
+    border: solid #E99962 .3rem;
+    border-radius: 1rem;
+    margin: auto;
+}
+
+#imgUrlProduct {
+    width: 100%;
+    object-fit: cover;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+}
+
+.productOpt {
+    width: 100%;
+    height: auto;
+}
+
+#colors {
+    width: 25%;
 }
