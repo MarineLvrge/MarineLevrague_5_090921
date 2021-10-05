@@ -38,16 +38,17 @@ fetch(`http://localhost:3000/api/teddies/${Id}`)
                                                             </div>`
 
                                                             
+// localStorage
+
+// Ecouteur du bouton "Ajouter au panier"
 const btnCart = document.querySelector("#btnCart");
-btnCart.addEventListener("click", (event) => {
+btnCart.addEventListener("click", function(event) {
 event.preventDefault();
-console.log(btnCart);
+addToCart(Id);
 });
 
-
 })
-.catch(function(e) {
-    console.log(e);
+.catch(function(err) {
     window.alert("La page semble rencontrer une erreur, contactez-nous si le problème persiste.")
 });
 

@@ -22,7 +22,7 @@ fetch(urlApi)
                                                                 </div>
                                                             </div>`
         }
-    }).catch(function(e) {
+    }).catch(function(err) {
         console.log(e);
         alert("La page semble rencontrer une erreur, contactez-nous si le problème persiste.")
     })
