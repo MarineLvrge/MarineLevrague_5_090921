@@ -1,5 +1,7 @@
                         // LOCALSTORAGE //
 
+var ProductBasket = [];
+
 // Fonction d'ajout au localStorage
 function addToCart(Id) {
     let productInCart = getProductToCart();
@@ -13,13 +15,13 @@ function getProductToCart() {
     if (productInCart == null) {
         return []; // Retourne un tableau vide
     }else {
-        return JSON.parse(productInCart); // Retourne les produits présents dans le panier
+        return JSON.parse(productInCart); // Retourne les produits présents dans le panier au format JSON
     }
 }
 
 // Fonction qui sauvegarde/stocke les produits présents dans le panier
 function saveCart(productInCart) {
-    localStorage.setItem("ProductBasket", JSON.stringify(productInCart));
+    localStorage.setItem("ProductBasket", JSON.stringify(productInCart)); // Sauvegarde les produits dans le localStorage au format chaînes de caractères
 }
 
 
