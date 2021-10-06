@@ -87,6 +87,10 @@ h1 {
     text-align: center;
 }
 
+#cartCounter {
+    position: absolute;
+}
+
 /* Footer */
 
 .footer {
@@ -116,6 +120,19 @@ h2 {
 }
 
 /* Page panier */
+
+.cartResume {
+    display: grid;
+    border: black solid 2px;
+    height: 15rem;
+    flex-grow: 1;
+}
+
+/* #cartBoard {
+   
+}
+*/
+
 
 form {
     display: flex;
