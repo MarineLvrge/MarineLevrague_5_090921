@@ -28,6 +28,8 @@
     <main>
         <section class="cartContainer">
 
+            <div class="emptyCart"></div>
+            
             <h1 class="title">Mon panier</h1>
             <div class="cartResume">
                 <table id="tableCart">
@@ -37,7 +39,13 @@
                             <th>Référence</th>
                             <th>Prix</th>
                         </tr>
-                    </thead> 
+                    </thead>
+                    <tbody id="cartMain"></tbody>
+                    <tfoot>
+                        <tr>
+                            <td class="cartTotal">Total</td>
+                        </tr>
+                    </tfoot>
                 </table>
             </div>
 
