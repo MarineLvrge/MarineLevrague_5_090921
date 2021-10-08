@@ -89,6 +89,15 @@ h1 {
 
 #cartCounter {
     position: absolute;
+    right: -1rem;
+    font-size: .8rem;
+    top: 3.5rem;
+    border: solid 1px white;
+    border-radius: 50%;
+    width: 1rem;
+    text-align: center;
+    color: white;
+    background-color: black;
 }
 
 /* Footer */

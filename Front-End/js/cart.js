@@ -1,21 +1,19 @@
                         // LOCALSTORAGE //
 
-var ProductBasket = [];
-
 // Fonction d'ajout au localStorage
 function addToCart(Id) {
-    let productInCart = getProductToCart();
-    productInCart.push(Id);
-    saveCart(productInCart);
+    let listProductInCart = getProductToCart();
+    listProductInCart.push(Id);
+    saveCart(listProductInCart);
 }
 
 // Fonction qui récupère les produits sélectionnés
 function getProductToCart() {
-    let productInCart = localStorage.getItem("ProductBasket");
-    if (productInCart == null) {
+    let listProductInCart = localStorage.getItem("ProductBasket");
+    if (listProductInCart == null) {
         return [];
     }else {
-        return JSON.parse(productInCart); // Retourne les produits présents dans le panier au format JSON
+        return JSON.parse(listProductInCart); // Retourne les produits présents dans le panier au format JSON
     }
 }
 
@@ -29,8 +27,8 @@ const confirmationPopup = () => {
 }
 
 // Fonction qui sauvegarde/stocke les produits présents dans le panier
-function saveCart(productInCart) {
-    localStorage.setItem("ProductBasket", JSON.stringify(productInCart)); // Sauvegarde les produits dans le localStorage au format chaînes de caractères
+function saveCart(listProductInCart) {
+    localStorage.setItem("ProductBasket", JSON.stringify(listProductInCart)); // Sauvegarde les produits dans le localStorage au format chaînes de caractères
     confirmationPopup();
 }
 
@@ -41,59 +39,24 @@ function saveCart(productInCart) {
 let productInStorage = getProductToCart();
 console.log(productInStorage);
 
-function displayProductCart() {
-    let totalCart = 0;
-
-    for(let key of productInStorage) {
-        console.log(key)
-        fetch(`http://localhost:3000/api/teddies/${Id}`)
-        .then(dataCart => {
-            let products = new Product(dataCart);
-            document.getElementById("cartMain").innerHTML += `<tr>
-                                                                <td>${products.name}</td>
-                                                                <td>${products._id}</td>
-                                                                <td>${getFormatedPrice(products.price)}</td>
-                                                            </tr>`
-        totalCart += products.price;
-        console.log(totalCart);
-        })
-    }
+// Fonction qui indique le nombre d'éléments dans le panier
+function cartLength() {
+    return productInStorage.length;
 }
+console.log(productInStorage.length);
 
-
-
-
-
-
-
-
-
-
-/* function displayCart() {
-    let totalCart = 0;
-    for(let key of productInStorage) {
-        fetch("http://localhost:3000/api/teddies")
-        .then(response => response.json())
-        .then(dataProductCart => {
-            let productsCart = new Product(dataProductCart);
-            document.querySelector("#cartMain").innerHTML += `<tr>
-                                                                    <td>${productsCart.name}</td>
-                                                                    <td>${productsCart._id}</td>
-                                                                    <td>${getFormatedPrice(products.price)}</td>
-                                                                </tr>`
-        
-        totalCart += productsCart.price;
-        console.log(totalCart);
-        document.querySelector(".cartTotal").innerHTML = `${getFormatedPrice(products.price)}`;
-        })
-    }
-}
-
-function seeProductOnPage() {
-    if(productInStorage.length > 0) {
-        seeProductToCart();
+//Fonction d'affichage du nombre d'éléments dans le panier
+function displayCounter() {
+    if(cartLength == 0) {
+        return 0;
     }else {
-        document.querySelector(".emptyCart").innerHTML += `<p>C'est bien vide par ici!</p>`
-        document.querySelector(".cartMain").style.display = none;
+        document.getElementById("cartCounter").innerHTML = cartLength();
     }
-} */
+}
+// Appel de la fonction d'affichage du nombre d'éléments dans le panier
+displayCounter();
+
+// Fonction d'affichage du panier sur la page
+function displayCart() {
+    
+}
