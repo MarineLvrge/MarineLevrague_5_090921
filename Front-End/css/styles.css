@@ -130,18 +130,48 @@ h2 {
 
 /* Page panier */
 
-.cartResume {
+#cartResume {
     display: grid;
     border: black solid 2px;
     height: 15rem;
     flex-grow: 1;
 }
 
-/* #cartBoard {
-   
+#emptyCart {
+    text-align: center;
+    height: 2rem;
+    font-style: italic;
+    font-size: 1.5rem;
 }
-*/
 
+.clearCart {
+    text-align: center;
+}
+#clearBtn {
+    font-size: 1rem;
+    color: black;
+    margin-top: 1rem;
+    border-radius: 1rem;
+    border: solid #E99962 .3rem;
+    width: 20%;
+    height: 3rem;
+    cursor: pointer;
+}
+
+#cartMain {
+   text-align: center;
+   color: rosybrown;
+}
+
+.cartTotal {
+    text-align: end;
+    font-weight: bold;
+}
+
+.numberCartTotal {
+    text-align: end;
+    font-weight: bold;
+}
 
 form {
     display: flex;
@@ -171,18 +201,15 @@ form {
     color: black;
 }
 
-button {
+.btn, #btnCart {
+    font-size: 1rem;
+    color: black;
     margin-top: 1rem;
     border-radius: 1rem;
     border: solid #E99962 .3rem;
     width: 100%;
     height: 3rem;
     cursor: pointer;
-}
-
-.btn {
-    font-size: 1rem;
-    color: black;
 }
 
 /* Page produit */

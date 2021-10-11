@@ -36,8 +36,8 @@ fetch(`http://localhost:3000/api/teddies/${Id}`)
                                                                     <button type="submit" id="btnCart">Ajouter au Panier</button>
                                                                 </div>
                                                             </div>`
+                                                           
 
-                                                            
 // localStorage
 
 // Ecouteur du bouton "Ajouter au panier"

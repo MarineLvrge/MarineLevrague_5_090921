@@ -58,5 +58,54 @@ displayCounter();
 
 // Fonction d'affichage du panier sur la page
 function displayCart() {
-    
+    if(productInStorage == 0) {
+        ifCartIsEmpty();
+    }else {
+        let totalCart = 0;
+        for(let key of productInStorage) {
+        console.log(key);
+            fetch("http://localhost:3000/api/teddies/" + key)
+                .then(response => response.json())
+                .then(dataTeddy => {
+                    let teddy = new Product(dataTeddy);
+                    document.getElementById("cartMain").innerHTML += `<tr>
+                                                                        <td>${teddy.name}</td>
+                                                                        <td>${teddy._id}</td>
+                                                                        <td>${getFormatedPrice(teddy.price)}
+                                                                    </tr>`;
+// Affichage du montant total du panier                                                             
+totalCart += teddy.price
+console.log(totalCart);
+document.querySelector(".numberCartTotal").innerHTML = totalCart / 100 + "€";
+            })    
+        }
+    }
 }
+
+// Fonction qui indique un message si le panier est vide
+function ifCartIsEmpty() {
+    document.getElementById("emptyCart").innerHTML += "C'est bien vide par ici..."
+    document.getElementById("tableCart").style.display = "none";
+}
+
+// Fonction pour vider le panier
+function toClearCart() {
+    const btnToClear = document.getElementById("clearBtn");
+    btnToClear.addEventListener("click", () => {
+        localStorage.clear();
+        document.location.reload();
+    })
+}
+
+// Appel de la fonction pour vider le panier
+toClearCart();
+
+// Fonction qui formate le prix
+function getFormatedPrice(price) {
+    let newPrice = price / 100;
+    return Intl.NumberFormat("fr-FR", {style: "currency", currency: "EUR"}).format(newPrice)
+};
+
+// Appel de la fonction d'affichage après le chargement de la page
+window.addEventListener("load", displayCart());
+    

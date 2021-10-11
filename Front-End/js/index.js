@@ -34,5 +34,5 @@ function getFormatedPrice(price) {
     return Intl.NumberFormat("fr-FR", {style: "currency", currency: "EUR"}).format(newPrice)
 };
 
-// Appel de la fonction de récupération
+// Appel de la fonction de récupération des produits
 getTeddies();

@@ -27,13 +27,12 @@
     <!-- Récapitulatif panier + formulaire d'envoi -->
     <main>
         <section class="cartContainer">
-
-            <div class="emptyCart"></div>
             
             <h1 class="title">Mon panier</h1>
-            <div class="cartResume">
+            <div id="cartResume">
                 <table id="tableCart">
                     <thead class="cartBoard">
+                        <div id="emptyCart"></div>
                         <tr>
                             <th>Produit</th>
                             <th>Référence</th>
@@ -44,9 +43,13 @@
                     <tfoot>
                         <tr>
                             <td class="cartTotal">Total</td>
+                            <th class="numberCartTotal"></th>
                         </tr>
                     </tfoot>
                 </table>
+                <div class="clearCart">
+                    <button id="clearBtn">Vider mon panier</button>
+                </div>
             </div>
 
             <div class="cartForm">
