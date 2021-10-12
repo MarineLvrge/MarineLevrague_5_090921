@@ -71,7 +71,7 @@ function displayCart() {
                     document.getElementById("cartMain").innerHTML += `<tr>
                                                                         <td>${teddy.name}</td>
                                                                         <td>${teddy._id}</td>
-                                                                        <td>${getFormatedPrice(teddy.price)}
+                                                                        <td>${getFormatedPrice(teddy.price)} - <button class="btnClearOne">X</button></td>
                                                                     </tr>`;
 // Affichage du montant total du panier                                                             
 totalCart += teddy.price
@@ -100,6 +100,16 @@ function toClearCart() {
 // Appel de la fonction pour vider le panier
 toClearCart();
 
+/* CA MARCHE PAS // Fonction pour supprimer un élément du panier
+function toClearOne() {
+    const clearOne = document.querySelectorAll(".btnClearOne");
+    clearOne.addEventListener("click", () => {
+        productInStorage.splice(productInStorage,1)
+    })
+}
+
+window.addEventListener("load", toClearOne());*/
+
 // Fonction qui formate le prix
 function getFormatedPrice(price) {
     let newPrice = price / 100;
@@ -108,4 +118,22 @@ function getFormatedPrice(price) {
 
 // Appel de la fonction d'affichage après le chargement de la page
 window.addEventListener("load", displayCart());
-    
+
+
+                                    // FORMULAIRE //
+
+// Récupération des input du formulaire
+const idFirstName = "firstName";
+const idLastName = "lastName";
+const idEmail = "email";
+const idAddress = "address";
+const idCity = "city";
+const idZip = "zip";
+
+// Récupération des input HTML
+let firstName = document.getElementById("firstName");
+let lastName = document.getElementById("lastName");
+let email = document.getElementById("email");
+let address = document.getElementById("address");
+let city = document.getElementById("city");
+let zip = document.getElementById("zip");
