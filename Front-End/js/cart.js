@@ -104,7 +104,7 @@ toClearCart();
 function toClearOne() {
     const clearOne = document.querySelectorAll(".btnClearOne");
     clearOne.addEventListener("click", () => {
-        productInStorage.splice(productInStorage,1)
+        productInStorage.splice(key,1)
     })
 }
 
