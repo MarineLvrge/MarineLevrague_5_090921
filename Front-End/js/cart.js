@@ -62,16 +62,16 @@ function displayCart() {
         ifCartIsEmpty();
     }else {
         let totalCart = 0;
-        for(let key of productInStorage) {
-        console.log(key);
-            fetch("http://localhost:3000/api/teddies/" + key)
+        for(let i in productInStorage) {
+        console.log(i);
+            fetch("http://localhost:3000/api/teddies/" + productInStorage[i])
                 .then(response => response.json())
                 .then(dataTeddy => {
                     let teddy = new Product(dataTeddy);
                     document.getElementById("cartMain").innerHTML += `<tr>
                                                                         <td>${teddy.name}</td>
                                                                         <td>${teddy._id}</td>
-                                                                        <td>${getFormatedPrice(teddy.price)} - <button class="btnClearOne">X</button></td>
+                                                                        <td>${getFormatedPrice(teddy.price)} - <button class="btnClearOne" onclick="toClearOne(${i})">X</button></td>
                                                                     </tr>`;
 // Affichage du montant total du panier                                                             
 totalCart += teddy.price
@@ -100,15 +100,14 @@ function toClearCart() {
 // Appel de la fonction pour vider le panier
 toClearCart();
 
-/* CA MARCHE PAS // Fonction pour supprimer un élément du panier
-function toClearOne() {
-    const clearOne = document.querySelectorAll(".btnClearOne");
-    clearOne.addEventListener("click", () => {
-        productInStorage.splice(key,1)
-    })
+// Fonction pour supprimer un élément du panier
+function toClearOne(key) {
+    productInStorage.splice(key,1);
+    let stringProductInStorage = JSON.stringify(productInStorage); // Conversion du tableau en chaine de caractères
+    localStorage.setItem("ProductBasket", stringProductInStorage);
+    document.location.reload();
 }
 
-window.addEventListener("load", toClearOne());*/
 
 // Fonction qui formate le prix
 function getFormatedPrice(price) {
@@ -118,22 +117,3 @@ function getFormatedPrice(price) {
 
 // Appel de la fonction d'affichage après le chargement de la page
 window.addEventListener("load", displayCart());
-
-
-                                    // FORMULAIRE //
-
-// Récupération des input du formulaire
-const idFirstName = "firstName";
-const idLastName = "lastName";
-const idEmail = "email";
-const idAddress = "address";
-const idCity = "city";
-const idZip = "zip";
-
-// Récupération des input HTML
-let firstName = document.getElementById("firstName");
-let lastName = document.getElementById("lastName");
-let email = document.getElementById("email");
-let address = document.getElementById("address");
-let city = document.getElementById("city");
-let zip = document.getElementById("zip");
