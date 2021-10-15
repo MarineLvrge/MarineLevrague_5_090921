@@ -50,7 +50,7 @@ const validInput2 = function(lastName) {
     let testTextOnly = textOnly.test(lastName.value);
     let small = lastName.nextElementSibling;
 
-    if(testTextOnly == true) {
+    if(testTextOnly) {
         small.innerHTML = "Le champ est correct";
         return true;
     }else {
