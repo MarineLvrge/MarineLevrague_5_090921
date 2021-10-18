@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/9c3c1d2eee.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./Front-End/css/styles.css">
+    <title>Orinounours - Résumé de votre commande</title>
+</head>
+
+ <!-- Header -->
+ <header>
+    <div class="container">
+        <div class="container_nav">
+            <a href="index.html"><img class="logo" src="./Front-End/images/logo_orinounours.png" alt="Logo Orinoco"></a>
+            <a href="cart.html" class="cart"><i class="fas fa-shopping-cart"><span>Panier</span></i></a>
+            <span id="cartCounter"></span>
+        </div>
+    </div>
+</header>
+
+<main>
+    
+    <section class="confirmOrder">
+        <h1 class="title">Confirmation de commande</h1>
+    </section>
+    
+    <section class="resumeOrder">
+        <p class="confirmationOrder">Nous vous confirmons et vous remercions pour votre commande qui porte le numéro n° <span id="idOrder"> </span>et d'un montant de : <span id="totalPriceOrder"></span></p>
+        <p class="thanksOrder">Nous espérons vous revoir très bientôt sur Orinounours!</p>
+    </section>
+
+</main>
+
+<!-- Footer -->
+
+<footer>
+    <section class="footer">
+        <ul class="footerList">
+            <li class="footerElt"><a href="#">À propos</a></li>
+            <li class="footerElt"><a href="#">Paiement 100% sécurisé</a></li>
+            <li class="footerElt"><a href="#">Nous contacter</a></li>
+        </ul>
+
+        <h2 class="footerTitle">Rejoignez-nous dès maintenant !</h2>
+        <div class="footerSocial">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+    </section>
+</footer>
+<script src="./Front-End/js/cart.js"></script>
+<script src="./Front-End/js/confirmation.js"></script>
+<body>
