@@ -22,10 +22,10 @@ fetch(urlApi)
                                                                 </div>
                                                             </div>`
         }
-    }).catch(function(err) {
-        console.log(e);
-        alert("La page semble rencontrer une erreur, contactez-nous si le problème persiste.")
     })
+    .catch(function(err) {
+        window.alert("La page semble rencontrer une erreur, contactez-nous si le problème persiste.")
+    });
 }
 
 // Fonction qui formate le prix

@@ -41,16 +41,16 @@ fetch(`http://localhost:3000/api/teddies/${Id}`)
 // localStorage
 
 // Ecouteur du bouton "Ajouter au panier"
-const btnCart = document.querySelector("#btnCart");
-btnCart.addEventListener("click", function(event) {
-event.preventDefault();
-addToCart(Id);
-});
+    const btnCart = document.querySelector("#btnCart");
+    btnCart.addEventListener("click", function(event) {
+        event.preventDefault();
+        addToCart(Id);
+    });
 
-})
-.catch(function(err) {
-    window.alert("La page semble rencontrer une erreur, contactez-nous si le problème persiste.")
-});
+    })
+    .catch(function(err) {
+        window.alert("La page semble rencontrer une erreur, contactez-nous si le problème persiste.")
+    });
 
 // Fonction qui formate le prix
 function getFormatedPrice(price) {

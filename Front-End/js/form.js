@@ -92,7 +92,7 @@ function listenInputs() {
         checkInputs(idZip, regexZip);
     })
 
-    document.getElementById("form").addEventListener("click", (e) => {
+    document.getElementById("btnValidOrder").addEventListener("click", (e) => {
         e.preventDefault();
         if(checkInputs(idFirstName, regexTextOnly) &&
         checkInputs(idLastName, regexTextOnly) &&
@@ -105,4 +105,12 @@ function listenInputs() {
     })
 }
 
+// Fonction qui empêche la validation du formulaire si le panier est vide
+function ifValidButEmptyCart() {
+    if(productInStorage == 0){
+        document.getElementById("btnValidOrder").setAttribute("disabled","");
+    }
+}
+
+ifValidButEmptyCart();
 listenInputs();

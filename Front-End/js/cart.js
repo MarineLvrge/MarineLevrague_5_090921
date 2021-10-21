@@ -63,7 +63,6 @@ function displayCart() {
     }else {
         let totalCart = 0;
         for(let i in productInStorage) {
-        console.log(i);
             fetch("http://localhost:3000/api/teddies/" + productInStorage[i])
                 .then(response => response.json())
                 .then(dataTeddy => {

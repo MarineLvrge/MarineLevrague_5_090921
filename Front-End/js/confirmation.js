@@ -8,7 +8,7 @@ function getFormatedPrice(price) {
 window.addEventListener("load", function() {
     let orderInCart = JSON.parse(localStorage.order); // Retourne en objet JSON la commande complète
     console.log(orderInCart);
-    let orderIdCart = orderInCart.orderId; // Retourne les ID des produits
+    let orderIdCart = orderInCart.orderId; // Retourne le numéro de commande
     console.log(orderIdCart);
     let productsAsOrder = orderInCart.products; // Retourne un tableau contenant en objets les détails de chaque produit
     console.log(productsAsOrder);
